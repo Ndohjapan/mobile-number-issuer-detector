@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: main 
+    branches: [main, master] 
   pull_request:
     branches: main 
 
@@ -12,12 +12,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
